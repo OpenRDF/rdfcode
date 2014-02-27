@@ -1,21 +1,13 @@
 package com.openrdf.junit;
 
-import java.io.PrintStream;
+import junit.framework.TestCase;
 
-import org.junit.internal.JUnitSystem;
+import com.openrdf.utils.Utils;
 
-public class junit implements JUnitSystem {
+public class junit extends TestCase {
 
-	@Override
-	public void exit(int arg0) {
-		// TODO Auto-generated method stub
-
+	public void testDateTime(){
+//		System.out.println(Utils.getDate());
+		System.out.println(Utils.getDateTime());
 	}
-
-	@Override
-	public PrintStream out() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
