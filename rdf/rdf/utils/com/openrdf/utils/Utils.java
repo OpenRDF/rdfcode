@@ -2,6 +2,9 @@ package com.openrdf.utils;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.UUID;
+
+import org.apache.log4j.Logger;
 
 /**
  * Utils工具包
@@ -33,5 +36,15 @@ public class Utils {
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance();
 		return dateFormat.format(date);
+	}
+	
+	/**
+	 * 生成UUID，用来唯一的标识一个用户id
+	 */
+	
+	public static UUID geneUUID(){
+		// 生成一个UUID
+		UUID uuid = UUID.randomUUID();
+		return uuid;
 	}
 }
