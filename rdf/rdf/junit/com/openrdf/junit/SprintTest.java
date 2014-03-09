@@ -1,16 +1,21 @@
 package com.openrdf.junit;
 
-import org.junit.Test;
-import org.springframework.context.*;
 
-public class SprintTest {
+import junit.framework.TestCase;
 
-	@Test
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.openrdf.entity.Users;
+
+
+public class SprintTest extends TestCase {
+
 	public void test() {
 		String[] beans = new String[]{"beans.xml"};
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(beans);
-		aax = applicationContext.getBean("aa");
-		aax.method();
+		Users users = (Users) applicationContext.getBean("aa");
+		users.getUserAge();
 	}
 
 }
