@@ -84,6 +84,12 @@ public class Users {
 	public void setUserStatus(String userStatus) {
 		this.userStatus = userStatus;
 	}
+	public Date getAccountCreateTime() {
+		return accountCreateTime;
+	}
+	public void setAccountCreateTime(Date accountCreateTime) {
+		this.accountCreateTime = accountCreateTime;
+	}
 	public int getUserAge() {
 		return userAge;
 	}

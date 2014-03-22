@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import com.openrdf.encrypt.utils.Base64Encrpt;
 
+import org.apache.log4j.Logger;
 
 /**
  * Sender Mail Action
@@ -19,6 +20,9 @@ import com.openrdf.encrypt.utils.Base64Encrpt;
  */
 
 public class SendMailAction {
+
+	// 下面是记录日志的方法
+	Logger logger = Logger.getLogger(SendMailAction.class);
 
 	// 下面是发送邮件的相关配置
 	private static String mailServerHost = null;
@@ -49,6 +53,7 @@ public class SendMailAction {
 		mailSenderBean.setContent(mailContent); // 邮件内容
 		// 采用以HTML格式发送邮件
 		boolean send_state = mailSender.sendHtmlMail(mailSenderBean);
+		logger.debug("Send Mail to: " + toAddress + " with subject: " + mailSubject + " state is " + send_state);
 		// 返回发送邮件
 		return send_state;
 	}
