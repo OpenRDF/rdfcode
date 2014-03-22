@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebRoot/WEB-INF/web.xml=UTF-8
 encoding//src/log4j.properties=UTF-8
+encoding//utils/com/openrdf/email/utils/MailSender.java=UTF-8
+encoding//utils/com/openrdf/email/utils/MailSenderBean.java=UTF-8
 encoding/<project>=GBK
