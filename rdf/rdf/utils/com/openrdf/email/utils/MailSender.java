@@ -69,7 +69,7 @@ public class MailSender  {
       * 以HTML格式发送邮件  
       * @param senderMailBean 待发送的邮件信息  
       */   
-    public static boolean sendHtmlMail(MailSenderBean senderMailBean){
+    public boolean sendHtmlMail(MailSenderBean senderMailBean){
       // 判断是否需要身份认证   
       MyAuthenticator authenticator = null;  
       Properties pro = senderMailBean.getProperties();  

@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import com.openrdf.encrypt.utils.Base64Encrpt;
+
 
 /**
  * Sender Mail Action
@@ -19,20 +21,36 @@ import java.util.Properties;
 public class SendMailAction {
 
 	// 下面是发送邮件的相关配置
-	private static String MailServerHost = null;
-	private static int ServerPort = 25;
-	private static String UserName = null;
-	private static String Password = null;
+	private static String mailServerHost = null;
+	private static String serverPort = null;
+	private static String userName = null;
+	private static String password = null;
+	private static MailSender mailSender = null;
 	
 	public boolean sendMail(String toAddress, String mailSubject, String mailContent){
 		// 获取email的配置信息
-		if (MailServerHost == null || UserName == null || Password == null){
-			
+		if (mailServerHost == null || userName == null || password == null || serverPort == null){
+			this.loadEmailProperties();
 		}
-		
-		
-		
-		return true;
+		// 初始化mailSender
+		if (mailSender == null){
+			mailSender = new MailSender();
+		}
+		// 初始化MailSenderBean
+		MailSenderBean mailSenderBean = new MailSenderBean();
+		mailSenderBean.setMailServerHost(mailServerHost); // SMTP服务器
+		mailSenderBean.setMailServerPort(serverPort); // SMTP端口
+		mailSenderBean.setValidate(true);
+		mailSenderBean.setUserName(userName); // 发件邮箱
+		mailSenderBean.setPassword(password); // 发件账户
+		mailSenderBean.setFromAddress(userName); // 显示发件人
+		mailSenderBean.setToAddress(toAddress); // 收件人
+		mailSenderBean.setSubject(mailSubject); // 邮件主题
+		mailSenderBean.setContent(mailContent); // 邮件内容
+		// 采用以HTML格式发送邮件
+		boolean send_state = mailSender.sendHtmlMail(mailSenderBean);
+		// 返回发送邮件
+		return send_state;
 	}
 	
 	private void loadEmailProperties(){
@@ -47,14 +65,14 @@ public class SendMailAction {
 			Properties properties = new Properties();
 			properties.load(fileInputStream);
 			// 读取文件内容
-			MailServerHost = properties.getProperty("MailServerHost");
-			ServerPort = Integer.parseInt(properties.getProperty("ServerPort"));
-			UserName = properties.getProperty("UserName");
+			mailServerHost = properties.getProperty("MailServerHost");
+			serverPort = properties.getProperty("ServerPort");
+			userName = properties.getProperty("UserName");
 			// 解密
-			Password = properties.getProperty("Password");
+			Base64Encrpt base64Encrpt = new Base64Encrpt();
+			password = base64Encrpt.getDesString(properties.getProperty("Password"));
 		}catch (Exception e){
-			
+			//log.error();
 		}
-		
 	}
 }
