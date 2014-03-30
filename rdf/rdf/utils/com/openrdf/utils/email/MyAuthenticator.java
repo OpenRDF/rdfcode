@@ -1,13 +1,13 @@
-package com.openrdf.email.utils;
+package com.openrdf.utils.email;
   
 import javax.mail.*;
 
 /**
  * E-mail MyAuthenticator
  * 
- * @description ±¾³ÌĞòÓÃÓÚÀ´×ÔĞ»ÏÈ±ó±ÏÒµÂÛÎÄ£¬ÈçÓĞÊ¹ÓÃÇëÁªÏµ×÷Õß¡£
- * @URL ´úÂëµØÖ·£ºhttp://github.com/openRDF/rdfcode
- * @dateTime 2014-3-22 ÏÂÎç6:56:09
+ * @description æœ¬ç¨‹åºç”¨äºæ¥è‡ªè°¢å…ˆæ–Œæ¯•ä¸šè®ºæ–‡ï¼Œå¦‚æœ‰ä½¿ç”¨è¯·è”ç³»ä½œè€…ã€‚
+ * @URL ä»£ç åœ°å€ï¼šhttp://github.com/openRDF/rdfcode
+ * @dateTime 2014-3-22 ä¸‹åˆ6:56:09
  * @author XieXianbin
  * @email a.b@hotmail.com
  *

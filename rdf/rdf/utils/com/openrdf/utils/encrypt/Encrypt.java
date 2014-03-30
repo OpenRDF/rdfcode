@@ -1,36 +1,36 @@
-package com.openrdf.encrypt.utils;
+package com.openrdf.utils.encrypt;
 
 import java.security.*;
 import javax.crypto.*;
 import sun.misc.*;
 
 /**
- * Ê¹ÓÃbase64Î»¼ÓÃÜ¼¼Êõ
+ * ä½¿ç”¨base64ä½åŠ å¯†æŠ€æœ¯
  * 
- * @description ±¾³ÌĞòÓÃÓÚÀ´×ÔĞ»ÏÈ±ó±ÏÒµÂÛÎÄ£¬ÈçÓĞÊ¹ÓÃÇëÁªÏµ×÷Õß¡£
- * @URL ´úÂëµØÖ·£ºhttp://github.com/openRDF/rdfcode
+ * @description æœ¬ç¨‹åºç”¨äºæ¥è‡ªè°¢å…ˆæ–Œæ¯•ä¸šè®ºæ–‡ï¼Œå¦‚æœ‰ä½¿ç”¨è¯·è”ç³»ä½œè€…ã€‚
+ * @URL ä»£ç åœ°å€ï¼šhttp://github.com/openRDF/rdfcode
  * @rdf com.openrdf.utils
- * @dateTime 2014-3-33
+ * @dateTime 2014-3-23
  * @author XieXianbin
  * @email a.b@hotmail.com
  *
  */
 
 /**
- * Ê¹ÓÃDES¼ÓÃÜÓë½âÃÜ,¿É¶Ôbyte[],StringÀàĞÍ½øĞĞ¼ÓÃÜÓë½âÃÜ ÃÜÎÄ¿ÉÊ¹ÓÃString,byte[]´æ´¢. 
- * ·½·¨: 
- * void getKey(String strKey)´ÓstrKeyµÄ×ÖÌõÉú³ÉÒ»¸öKey 
- * String getEncString(String strMing)¶ÔstrMing½øĞĞ¼ÓÃÜ,·µ»ØStringÃÜÎÄ
- * String getDesString(String strMi)¶ÔstrMin½øĞĞ½âÃÜ,·µ»ØStringÃ÷ÎÄ
- * byte[] getEncCode(byte[] byteS)byte[]ĞÍµÄ¼ÓÃÜ byte[]
- * byte[] getDesCode(byte[] byteD)byte[]ĞÍµÄ½âÃÜ
+ * ä½¿ç”¨DESåŠ å¯†ä¸è§£å¯†,å¯å¯¹byte[],Stringç±»å‹è¿›è¡ŒåŠ å¯†ä¸è§£å¯† å¯†æ–‡å¯ä½¿ç”¨String,byte[]å­˜å‚¨. 
+ * æ–¹æ³•: 
+ * void getKey(String strKey)ä»strKeyçš„å­—æ¡ç”Ÿæˆä¸€ä¸ªKey 
+ * String getEncString(String strMing)å¯¹strMingè¿›è¡ŒåŠ å¯†,è¿”å›Stringå¯†æ–‡
+ * String getDesString(String strMi)å¯¹strMinè¿›è¡Œè§£å¯†,è¿”å›Stringæ˜æ–‡
+ * byte[] getEncCode(byte[] byteS)byte[]å‹çš„åŠ å¯† byte[]
+ * byte[] getDesCode(byte[] byteD)byte[]å‹çš„è§£å¯†
  * 
  * 
- * µ¼Èësun.misc.BASE64Encoder jar°ü²½Öè:
- * 		ÓÒ¼üÏîÄ¿ -->Properties -->Java Bulid Path-> Libraries 
+ * å¯¼å…¥sun.misc.BASE64Encoder jaråŒ…æ­¥éª¤:
+ * 		å³é”®é¡¹ç›® -->Properties -->Java Bulid Path-> Libraries 
  * 		-->JRE System Library -->Access rules 
- * 		-->Ë«»÷Type Access RulesÔÚAccessibleÖĞÌí¼Óaccessible£¬
- * 		ÏÂÃæÌîÉÏ** µã»÷È·¶¨¡£
+ * 		-->åŒå‡»Type Access Rulesåœ¨Accessibleä¸­æ·»åŠ accessibleï¼Œ
+ * 		ä¸‹é¢å¡«ä¸Š** ç‚¹å‡»ç¡®å®šã€‚
  * 
  */
 public class Encrypt {
@@ -40,7 +40,7 @@ public class Encrypt {
 	private String strMi = "";
 	private String strM = "";
 
-	// ¸ù¾İ²ÎÊıÉú³ÉKEY
+	// æ ¹æ®å‚æ•°ç”ŸæˆKEY
 	public void setKey(String strKey) {
 		try {
 			KeyGenerator _generator = KeyGenerator.getInstance("DES");
@@ -52,7 +52,7 @@ public class Encrypt {
 		}
 	}
 
-	// ¼ÓÃÜStringÃ÷ÎÄÊäÈë,StringÃÜÎÄÊä³ö
+	// åŠ å¯†Stringæ˜æ–‡è¾“å…¥,Stringå¯†æ–‡è¾“å‡º
 	public void setEncString(String strMing) {
 		BASE64Encoder base64en = new BASE64Encoder();
 		try {
@@ -67,7 +67,7 @@ public class Encrypt {
 		}
 	}
 
-	// ¼ÓÃÜ:ÒÔbyte[]Ã÷ÎÄÊäÈë,byte[]ÃÜÎÄÊä³ö
+	// åŠ å¯†:ä»¥byte[]æ˜æ–‡è¾“å…¥,byte[]å¯†æ–‡è¾“å‡º
 	private byte[] getEncCode(byte[] byteS) {
 		byte[] byteFina = null;
 		Cipher cipher;
@@ -84,7 +84,7 @@ public class Encrypt {
 		return byteFina;
 	}
 
-	// ½âÃÜ:ÒÔStringÃÜÎÄÊäÈë,StringÃ÷ÎÄÊä³ö
+	// è§£å¯†:ä»¥Stringå¯†æ–‡è¾“å…¥,Stringæ˜æ–‡è¾“å‡º
 	public void setDesString(String strMi) {
 		BASE64Decoder base64De = new BASE64Decoder();
 		try {
@@ -101,7 +101,7 @@ public class Encrypt {
 
 	}
 
-	// ½âÃÜ:ÒÔbyte[]ÃÜÎÄÊäÈë,ÒÔbyte[]Ã÷ÎÄÊä³ö
+	// è§£å¯†:ä»¥byte[]å¯†æ–‡è¾“å…¥,ä»¥byte[]æ˜æ–‡è¾“å‡º
 	private byte[] getDesCode(byte[] byteD) {
 		Cipher cipher;
 		byte[] byteFina = null;
@@ -117,12 +117,12 @@ public class Encrypt {
 		return byteFina;
 	}
 
-	// ·µ»Ø¼ÓÃÜºóµÄÃÜÎÄstrMi
+	// è¿”å›åŠ å¯†åçš„å¯†æ–‡strMi
 	public String getEncString() {
 		return strMi;
 	}
 
-	// ·µ»Ø½âÃÜºóµÄÃ÷ÎÄ
+	// è¿”å›è§£å¯†åçš„æ˜æ–‡
 	public String getDesString() {
 		return strM;
 	}

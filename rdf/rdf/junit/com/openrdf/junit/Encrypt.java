@@ -1,6 +1,6 @@
 package com.openrdf.junit;
 
-import com.openrdf.encrypt.utils.Base64Encrpt;
+import com.openrdf.utils.encrypt.Base64Encrpt;
 
 import junit.framework.TestCase;
 

@@ -1,11 +1,11 @@
-package com.openrdf.email.utils;
+package com.openrdf.utils.email;
 
 import java.util.Properties;
 
 /**
  * E-mail bean
  * 
- * @description 本程序用于来自谢先斌毕业论文，如有使用请联系作者。 
+ * @description 本程序用于来自谢先斌毕业论文，如有使用请联系作者
  * @URL 代码地址：http://github.com/openRDF/rdfcode
  * @dateTime 2014-3-22 下午6:47:59
  * @author XieXianbin
@@ -22,10 +22,10 @@ public class MailSenderBean {
 	private String fromAddress;
 	// 邮件接收者的地址
 	private String toAddress;
-	// 登陆邮件发送服务器的用户名和密码
+	// 登陆邮件服务器的用户名和密码
 	private String userName;
 	private String password;
-	// 是否需要身份验证
+	// 是否身份验证
 	private boolean validate = false;
 	// 邮件主题
 	private String subject;

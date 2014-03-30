@@ -1,10 +1,10 @@
-package com.openrdf.encrypt.utils;
+package com.openrdf.utils.encrypt;
 
 /**
- * Base64Encrpt ¼ÓÃÜÓë½âÃÜµÄ¹¤¾ßÀà
+ * Base64Encrpt åŠ å¯†ä¸è§£å¯†çš„å·¥å…·ç±»
  * 
- * @description ±¾³ÌĞòÓÃÓÚÀ´×ÔĞ»ÏÈ±ó±ÏÒµÂÛÎÄ£¬ÈçÓĞÊ¹ÓÃÇëÁªÏµ×÷Õß¡£
- * @URL ´úÂëµØÖ·£ºhttp://github.com/openRDF/rdfcode
+ * @description æœ¬ç¨‹åºç”¨äºæ¥è‡ªè°¢å…ˆæ–Œæ¯•ä¸šè®ºæ–‡ï¼Œå¦‚æœ‰ä½¿ç”¨è¯·è”ç³»ä½œè€…ã€‚
+ * @URL ä»£ç åœ°å€ï¼šhttp://github.com/openRDF/rdfcode
  * @rdf com.openrdf.utils
  * @dateTime 2014-2-27 
  * @author XieXianbin
@@ -13,32 +13,32 @@ package com.openrdf.encrypt.utils;
  */
 
 public class Base64Encrpt {
-	// ¼ÓÃÜ×Ö·û´®
+	// åŠ å¯†å­—ç¬¦ä¸²
 	private final static String encryptKey = "!qa#2.D3sSd3E/234=";
-	// ÉùÃ÷ÊµÀı»¯
+	// å£°æ˜å®ä¾‹åŒ–
 	private static Encrypt encrypt = null;
 	
 	public Base64Encrpt(){
-		// µÚÒ»´Îµ÷ÓÃÊ±ÊµÀı»¯encrypt
+		// ç¬¬ä¸€æ¬¡è°ƒç”¨æ—¶å®ä¾‹åŒ–encrypt
 		if(encrypt == null){
 			encrypt = new Encrypt();
 			encrypt.setKey(encryptKey);
 		}
 	}
 	
-	// ¼ÓÃÜ
+	// åŠ å¯†
 	public String getEncString(String enString){
-		// ¼ÓÃÜ
+		// åŠ å¯†
 		encrypt.setEncString(enString);
-		// ·µ»Ø
+		// è¿”å›
 		return encrypt.getEncString();
 	}
 	
-	// ½âÃÜ
+	// è§£å¯†
 	public String getDesString(String deString){
-		// ½âÃÜ
+		// è§£å¯†
 		encrypt.setDesString(deString);
-		// ·µ»Ø
+		// è¿”å›
 		return encrypt.getDesString();
 	}
 }

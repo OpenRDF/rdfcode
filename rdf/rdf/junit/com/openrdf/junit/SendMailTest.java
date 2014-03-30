@@ -1,6 +1,6 @@
 package com.openrdf.junit;
 
-import com.openrdf.email.utils.SendMailAction;
+import com.openrdf.utils.email.SendMailAction;
 
 import junit.framework.TestCase;
 

@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
 encoding//WebRoot/WEB-INF/web.xml=UTF-8
-encoding//utils/com/openrdf/email/utils/MailSender.java=UTF-8
-encoding//utils/com/openrdf/email/utils/MailSenderBean.java=UTF-8
-encoding/<project>=GBK
+encoding//utils/com/openrdf/utils/email/MailSender.java=UTF-8
+encoding//utils/com/openrdf/utils/email/MailSenderBean.java=UTF-8
+encoding/<project>=UTF-8
