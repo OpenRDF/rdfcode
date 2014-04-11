@@ -1,18 +1,18 @@
 package com.openrdf.base.impl;
 
-import com.openrdf.base.Bas;
+import com.openrdf.base.*;
 
 /**
  * 
  * 
- * @description ±¾³ÌĞòÓÃÓÚÀ´×ÔĞ»ÏÈ±ó±ÏÒµÂÛÎÄ£¬ÈçÓĞÊ¹ÓÃÇëÁªÏµ×÷Õß¡£
- * @URL ´úÂëµØÖ·£ºhttp://github.com/openRDF/rdfcode
+ * @description æœ¬ç¨‹åºç”¨äºæ¥è‡ªè°¢å…ˆæ–Œæ¯•ä¸šè®ºæ–‡ï¼Œå¦‚æœ‰ä½¿ç”¨è¯·è”ç³»ä½œè€…ã€‚
+ * @URL ä»£ç åœ°å€ï¼šhttp://github.com/openRDF/rdfcode
  * @rdf com.openrdf.base
- * @dateTime 2014-2-28 ÉÏÎç12:29:10
+ * @dateTime 2014-2-28 ä¸Šåˆ12:29:10
  * @author XieXianbin
  * @email a.b@hotmail.com
  *
  */
-public class Base implements Bas {
+public class Base implements ImBase {
 
 }

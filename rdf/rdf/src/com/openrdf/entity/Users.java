@@ -5,10 +5,10 @@ import java.util.Date;
 /**
  * User bean
  * 
- * @description ±¾³ÌĞòÓÃÓÚÀ´×ÔĞ»ÏÈ±ó±ÏÒµÂÛÎÄ£¬ÈçÓĞÊ¹ÓÃÇëÁªÏµ×÷Õß¡£
- * @URL ´úÂëµØÖ·£ºhttp://github.com/openRDF/rdfcode
+ * @description æœ¬ç¨‹åºç”¨äºæ¥è‡ªè°¢å…ˆæ–Œæ¯•ä¸šè®ºæ–‡ï¼Œå¦‚æœ‰ä½¿ç”¨è¯·è”ç³»ä½œè€…ã€‚
+ * @URL ä»£ç åœ°å€ï¼šhttp://github.com/openRDF/rdfcode
  * @rdf com.openrdf.beans
- * @dateTime 2014-3-6 ÏÂÎç9:43:59
+ * @dateTime 2014-3-6 ä¸‹åˆ9:43:59
  * @author XieXianbin
  * @email a.b@hotmail.com
  *
@@ -16,50 +16,52 @@ import java.util.Date;
 
 public class Users {
 
-	// ÓÃ»§id
+	// ç”¨æˆ·id
 	private String userId;
-	// ÓÃ»§Ãû³Æ
+	// ç”¨æˆ·åç§°
 	private String userName;
-	// ÓÃ»§ÃÜÂë
+	// ç”¨æˆ·å¯†ç 
 	private String userPass;
-	// ÓÃ»§È¨ÏŞ
+	// ç”¨æˆ·æƒé™
 	private String userStatus;
-	// ÕË»§´´½¨Ê±¼ä
+	// è´¦æˆ·åˆ›å»ºæ—¶é—´
 	private Date accountCreateTime;
-	// ÓÃ»§ÄêÁä
+	// ç”¨æˆ·å¹´é¾„
 	private int userAge;
-	// ÓÃ»§³öÉúÄêÔÂ
+	// ç”¨æˆ·å‡ºç”Ÿå¹´æœˆ
 	private String userBirthday;
-	// ÓÃ»§ĞÔ±ğ
+	// ç”¨æˆ·æ€§åˆ«
 	private String userSex;
-	// ÓÃ»§¹ú¼Ò
+	// ç”¨æˆ·å›½å®¶
 	private String userCountry;
-	// ÓÃ»§Ê¡·İ
+	// ç”¨æˆ·çœä»½
 	private String userProvince;
-	// ÓÃ»§³ÇÊĞ
+	// ç”¨æˆ·åŸå¸‚
 	private String userCity;
-	// ÓÃ»§µØÖ·
+	// ç”¨æˆ·åœ°å€
 	private String userAddress;
-	// ÓÃ»§ÓÊ±à
+	// ç”¨æˆ·é‚®ç¼–
 	private String userPostCode;
-	// ÓÃ»§Email
+	// ç”¨æˆ·Email
 	private String userEmail;
 	private String userEmail1;
 	private String userEmail2;
-	// ÓÃ»§µç»°
+	// ç”¨æˆ·ç”µè¯
 	private String userPhone;
-	// ÓÃ»§QQ
+	// ç”¨æˆ·QQ
 	private String userQQ;
-	// ÓÃ»§MSN
+	// ç”¨æˆ·MSN
 	private String userMSN;
-	// ÓÃ»§¼ò½é
+	// ç”¨æˆ·ç®€ä»‹
 	private String userBriefInfroduction;
-	// ÓÃ»§ÕË»§Óà¶î
+	// ç”¨æˆ·è´¦æˆ·ä½™é¢
 	private double userBalance;
-	// ÓÃ»§ÆäËû
+	// ç”¨æˆ·å…¶ä»–
 	private String userOthers;
+	// æ”¯ä»˜å®è´¦æˆ·
+	private String aliPayAccount;
 	
-	// gets and sets ·½·¨
+	// gets and sets æ–¹æ³•
 	public String getUserId() {
 		return userId;
 	}
@@ -191,6 +193,12 @@ public class Users {
 	}
 	public void setUserOthers(String userOthers) {
 		this.userOthers = userOthers;
+	}
+	public String getAliPayAccount() {
+		return aliPayAccount;
+	}
+	public void setAliPayAccount(String aliPayAccount) {
+		this.aliPayAccount = aliPayAccount;
 	}
 	
 }
