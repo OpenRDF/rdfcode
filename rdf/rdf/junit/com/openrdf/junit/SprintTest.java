@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.openrdf.beans.Users;
+import com.openrdf.entity.Users;
 
 
 public class SprintTest extends TestCase {
