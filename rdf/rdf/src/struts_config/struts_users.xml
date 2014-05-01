@@ -13,14 +13,18 @@
 		</global-results>
 		 -->
 		<!-- 注册 -->
+		<!--
 		<action name="register" class="usersFrontAction" method="doRegister">
 			<result name="input">/register_n.jsp</result>
-<!-- 			<result name="reg_success" type="redirectAction">
+ 			<result name="reg_success" type="redirectAction">
 			<param name="namespace">/main/users</param>
 			<param name="actionName">initRegister</param>
-			</result> -->
+			</result>
 		</action>
+		 -->
 		<!-- AJAX -->
+		<!-- 
 		<action name="check" class="usersAction" method="checkLoginAccount"></action>
+		 -->
 	</package>
 </struts>

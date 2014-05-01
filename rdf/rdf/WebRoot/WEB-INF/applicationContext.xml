@@ -36,12 +36,13 @@
 	
 	<!-- 依赖注入数据源，注入上面定义的dataSource -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- dataSource -->
 		<property name="dataSource" ref="dataSource"></property>
 		<!-- 以下用来列出Hibernate映射文件 -->
 		<property name="mappingResources">
 			<list>
-				<value>com/openrdf/entity/Users.hbm.xml</value>
-				
+				<value>com/openrdf/beans/Users.hbm.xml</value>
+				<value>com/openrdf/beans/UserLogin.hbm.xml</value>
 				
 				
 				
@@ -72,41 +73,10 @@
 	<bean id="mailMessage" class="org.springframework.mail.SimpleMailMessage">
 	 	<property name="from" value="spring_test@163.com"/>
 		 指定邮件标题 
-	 	<property name="subject" value="竞价通知"/>
+	 	<property name="subject" value="注册通知"/>
 	</bean>
 	 -->
 	<!-- 配置业务逻辑组件 -->
- <bean id="mgr"
-  class="org.crazyjava.auction.service.impl.AuctionManagerImpl">
-  <!-- 为业务逻辑组件注入所需的DAO组件 -->
-  <property name="userDao" ref="auctionUserDao"/>
-  <property name="bidDao" ref="bidDao"/>
-  <property name="itemDao" ref="itemDao"/>
-  <property name="kindDao" ref="kindDao"/>
-  <property name="stateDao" ref="stateDao"/>
-  <property name="mailSender" ref="mailSender"/>
-  <property name="message" ref="mailMessage"/>
- </bean>
- <!-- 配置一个TimerTask Bean -->
- <bean id="checkWiner" class="org.crazyjava.auction.schedule.CheckWiner">
-  <!-- 依赖注入业务逻辑组件 -->
-  <property name="mgr" ref="mgr"/>
- </bean>
- <!-- 将TimerTask Bean：checkWiner包装成可周期性执行的任务调度Bean -->
- <bean id="scheduledTask"
-  class="org.springframework.scheduling.timer.ScheduledTimerTask">
-  <!-- 指定调度频率和延迟 -->
-  <property name="delay" value="0"/>
-  <property name="period" value="86400000"/>
-  <property name="timerTask" ref="checkWiner"/>
- </bean>
- <!-- 启动实际调度 -->
- <bean id="timerFactory" 
-  class="org.springframework.scheduling.timer.TimerFactoryBean">
-  <!-- 下面列出所有需要调用的任务调度Bean -->
-  <property name="scheduledTimerTasks">
-	</property>
-	</bean>
 	
 	
 	<!-- Action -->
