@@ -42,12 +42,11 @@ public class QueryDatabaseAuthenticationHandler extends AbstractJdbcUsernamePass
 
     protected final boolean authenticateUsernamePasswordInternal(final UsernamePasswordCredentials credentials) throws AuthenticationException {
         final String username = getPrincipalNameTransformer().transform(credentials.getUsername());
-        final String password = credentials.getPassword();
-        final String encryptedPassword = this.getPasswordEncoder().encode(
-            password);
+        final String password = getPrincipalNameTransformer().transform(credentials.getPassword());
+        final String encryptedPassword = this.getPasswordEncoder().encode(password);
         
         try {
-            final String dbPassword = getJdbcTemplate().queryForObject(this.sql, String.class, username);
+			final String dbPassword = getJdbcTemplate().queryForObject(this.sql, String.class, username);
             return dbPassword.equals(encryptedPassword);
         } catch (final IncorrectResultSizeDataAccessException e) {
             // this means the username was not found.
